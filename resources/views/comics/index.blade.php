@@ -1,3 +1,5 @@
+<a href="{{ route('comics.create') }}" role="button" class="btn btn-primary">Crea Fumetto</a>
+
 <table class="table">
     <thead>
         <tr>
@@ -20,11 +22,14 @@
             <td>{{ $comic->series }}</td>
             <td>{{ $comic->sale_date }}</td>
             <td>{{ $comic->type }}</td>
+            <td>
+                <a href="{{ route('comics.show', $comic) }}">Dettaglio</a>
+            </td>
         </tr>  
         @endforeach
     </tbody>
 
-    {{ $comics->links('pagination::bootstrap-5') }}
-
+    
 </table>
+{{ $comics->links('pagination::bootstrap-5') }}
 
